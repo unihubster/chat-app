@@ -7,6 +7,8 @@ public class ChatOutMessage {
     private String groupName;
     private Date timestamp;
 
+    public ChatOutMessage() {}
+
     public ChatOutMessage(String content) {
         this.content = content;
     }
