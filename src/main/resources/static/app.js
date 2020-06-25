@@ -35,6 +35,10 @@ function connect() {
             showMessage(JSON.parse(greeting.body).content);
         });
         
+        stompClient.subscribe('/topic/guestupdates', function (greeting) {
+            showTyping(JSON.parse(greeting.body).content);
+        });
+        
         sendName();
     });
     
@@ -47,6 +51,10 @@ function disconnect() {
     }
     setConnected(false);
     console.log("Disconnected");
+}
+
+function showTyping(message) {
+    $("#typingUpdates").html("<tr><td>Someone is typing...</td></tr>");
 }
 
 function sendMessage() {
@@ -78,6 +86,11 @@ $(function () {
     $( "#disconnect" ).click(function() { disconnect(); });
     
     $( "#send" ).click(function() { sendMessage(); });
+    
+    $("#message").keyup(function (e)  {
+        // Send "is typing" message to server after keystrokes detected
+        stompClient.send("/app/guestupdate", {}, JSON.stringify({'message': $("#message").val()}));
+    });
 });
 
 
