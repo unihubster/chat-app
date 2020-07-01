@@ -10,13 +10,13 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>net.demo</groupId>
-    <artifactId>chat</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>chat-app</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
     <name>chat</name>
     <description>Chat project for Spring Boot and WebSockets</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
 
     <dependencies>
