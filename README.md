@@ -11,3 +11,7 @@ Webjars was used for frontend libraries.
 ## Related links
 
 https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web.html#websocket
+
+https://spring.io/guides/gs/messaging-stomp-websocket/
+
+https://habr.com/ru/post/343908/
